@@ -1,6 +1,9 @@
 import React, { useMemo } from "react";
 import { Redirect, useParams } from "react-router";
 import getHeroById from "../../selectors/getHeroById";
+import { heroImages } from "../../helpers/heroimgaesWebpack";
+
+// import batman from '../../assets/heroes/dc-batman.jpg'; // recurso estatico
 
 const HeroScreen = ({ history }) => {
   const { id } = useParams(); // parametros por la url
@@ -33,7 +36,9 @@ const HeroScreen = ({ history }) => {
       <div className="col-4">
         <img
           className="img-thumbnail  animate__animated animate__fadeInLeft"  
-          src={`../assets/heroes/${id}.jpg`}
+          // src={`../assets/heroes/${id}.jpg`} // desde public/assets 
+          // src={batman} // archivos estaticos con import
+          src={heroImages(`./${id}.jpg`).default}
           alt={superhero}
         />
       </div>

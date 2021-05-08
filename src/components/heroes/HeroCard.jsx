@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { heroImages } from "../../helpers/heroimgaesWebpack";
+
 
 const HeroCard = ({
   id,
@@ -17,7 +19,8 @@ const HeroCard = ({
           <div className="col-md-4">
             <img
               className="card-img "
-              src={`./assets/heroes/${id}.jpg`}
+              // src={`./assets/heroes/${id}.jpg`}
+              src={heroImages(`./${id}.jpg`).default}
               alt={superhero}
             />
           </div>
